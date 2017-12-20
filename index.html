@@ -43,6 +43,7 @@
 
 
         //onClickLogout();
+        var apiParams = 'me?fields=id,name,birthday';
 
         (function(d, s, id){
              var js, fjs = d.getElementsByTagName(s)[0];
@@ -88,6 +89,15 @@
 
         function printJSON(){
           console.log('print JSON here');
+          FB.api(apiParams, function(response){
+            if (response && !response.error){
+              console.log(response);
+            }
+            else{
+              console.log('no json response; error');
+            }
+          })
+
         }
 
     </script>
